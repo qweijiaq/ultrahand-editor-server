@@ -3,4 +3,4 @@
  * @author Jia Wei
  */
 
-require("./db-check");
+require('./db-check')

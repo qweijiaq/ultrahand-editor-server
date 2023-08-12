@@ -3,13 +3,13 @@
  * @author Jia Wei
  */
 
-const mysql = require("mysql2/promise");
-const { mysqlConf } = require("../config/index");
+const mysql = require('mysql2/promise')
+const { mysqlConf } = require('../config/index')
 
 async function testMysqlConn() {
-  const connection = await mysql.createConnection(mysqlConf);
-  const [rows] = await connection.execute("select now();");
-  return rows;
+    const connection = await mysql.createConnection(mysqlConf)
+    const [rows] = await connection.execute('select now();')
+    return rows
 }
 
 // // 可直接执行 node src/db/mysql2.js 进行测试
@@ -18,4 +18,4 @@ async function testMysqlConn() {
 //     console.log(rows)
 // })()
 
-module.exports = testMysqlConn;
+module.exports = testMysqlConn

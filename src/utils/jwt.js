@@ -3,20 +3,20 @@
  * @author Jia Wei
  */
 
-const util = require("util");
-const jwt = require("jsonwebtoken");
-const { JWT_SECRET } = require("../config/constant");
-const { jwtExpiresIn } = require("../config/index");
+const util = require('util')
+const jwt = require('jsonwebtoken')
+const { JWT_SECRET } = require('../config/constant')
+const { jwtExpiresIn } = require('../config/index')
 
-const verify = util.promisify(jwt.verify);
+const verify = util.promisify(jwt.verify)
 
 /**
  * jwt verify
  * @param {string} token token
  */
 async function jwtVerify(token) {
-  const data = await verify(token.split(" ")[1], JWT_SECRET); // 去掉前面的 Bearer
-  return data;
+    const data = await verify(token.split(' ')[1], JWT_SECRET) // 去掉前面的 Bearer
+    return data
 }
 
 /**
@@ -24,11 +24,11 @@ async function jwtVerify(token) {
  * @param {Object} data data
  */
 function jwtSign(data) {
-  const token = jwt.sign(data, JWT_SECRET, { expiresIn: jwtExpiresIn });
-  return token;
+    const token = jwt.sign(data, JWT_SECRET, { expiresIn: jwtExpiresIn })
+    return token
 }
 
 module.exports = {
-  jwtVerify,
-  jwtSign,
-};
+    jwtVerify,
+    jwtSign,
+}
