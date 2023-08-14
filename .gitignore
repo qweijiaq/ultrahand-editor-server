@@ -113,6 +113,8 @@ wiki/
 
 .docker-volumes/
 
-wfp_test/
+wj_test/
 
 tmp-files-windows/
+
+.docker-volumes/

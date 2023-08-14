@@ -20,13 +20,13 @@ router.get('/api/db-check', async ctx => {
     }
 
     // 测试 redis 连接
-    cacheSet('name', 'biz editor sever OK - by redis')
+    cacheSet('name', 'ultrahand editor sever OK - by redis')
     const redisTestVal = await cacheGet('name')
 
     ctx.body = {
         errno: 0,
         data: {
-            name: 'biz editor sever',
+            name: 'ultrahand editor sever',
             version: packageInfo.version,
             ENV,
             mysqlConn: mysqlRes.length > 0,
